@@ -1,3 +1,5 @@
+from pygame import K_d
+
 from settings import *
 import pygame as pg
 import math
@@ -10,7 +12,7 @@ class Player:
 
     def movement(self):
         sin_a = math.sin(self.angle)
-        cos_a = maath.cos(self.angle)
+        cos_a = math.cos(self.angle)
         dx, dy = 0, 0
         speed = PLAYER_SPEED * self.game.delta_time
         speed_sin = speed * sin_a
@@ -26,7 +28,7 @@ class Player:
         if keys[pg.K_a]:
             dx += speed_sin
             dy += -speed_cos
-        if keys[K_d]:
+        if keys[pg.K_d]:
             dx += -speed_sin
             dy += speed_cos
 
