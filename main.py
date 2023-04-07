@@ -5,6 +5,7 @@ from map import *
 from player import *
 from raycasting import *
 from object_render import *
+from sprite_object import *
 
 class Game:
     def __init__(self):
