@@ -22,20 +22,17 @@ class Game:
             self.player = Player(self)
             self.object_render = ObjectRender(self)
             self.raycasting = RayCasting(self)
-            # self.static_sprites = SpriteObject(self)
-            # self.animated_sprites = AnimatedSprite(self)
+            self.object_handler = ObjectHandler(self)
 
         def update(self):
             self.player.update()
             self.raycasting.update()
-            # self.static_sprites.update()
-            # self.animated_sprites.update()
+            self.object_handler.update()
             pg.display.flip()
             self.delta_time = self.clock.tick(FPS)
             pg.display.set_caption(f'{self.clock.get_fps():.1f}')
 
         def draw(self):
-            # self.screen.fill('black')
             self.object_render.draw()
             # self.map.draw()
             # self.player.draw()
