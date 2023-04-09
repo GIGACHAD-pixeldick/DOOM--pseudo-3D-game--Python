@@ -33,10 +33,9 @@ class RayCasting:
 
     def ray_cast(self):
         self.ray_casting_result = []
+        texture_verticals, texture_horizontals = 1, 1
         ox, oy = self.game.player.pos
         x_map, y_map = self.game.player.map_pos
-
-        texture_verticals, texture_horizontals = 1, 1
 
         ray_angle = self.game.player.angle - HALF_FOV + 0.0001
         for ray in range(NUM_RAYS):
@@ -55,7 +54,7 @@ class RayCasting:
             for i in range(MAX_DEPTH):
                 tile_horizontals = int(x_horizontals), int(y_horizontals)
                 if tile_horizontals in self.game.map.world_map:
-                    texture_verticals = self.game.map.world_map[tile_verticals]
+                    texture_horizontals = self.game.map.world_map[tile_horizontals]
                     break
 
                 y_horizontals += dx
@@ -74,6 +73,7 @@ class RayCasting:
             for i in range(MAX_DEPTH):
                 tile_verticals = int(x_verticals), int(y_verticals)
                 if tile_verticals in self.game.map.world_map:
+                    texture_verticals = self.game.map.world_map[tile_verticals]
                     break
 
                 x_verticals += dx
