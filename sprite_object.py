@@ -22,7 +22,7 @@ class SpriteObject:
         projection = SCREEN_DIST / self.norm_dist * self.SPRITE_SCALE
         projection_width, projection_height = projection * self.IMAGE_RATIO, projection
 
-        image = pg.transform/scale(self.image, (projection_width, projection_height))
+        image = pg.transform.scale(self.image, (projection_width, projection_height))
 
         self.sprite_half_width = projection_width // 2
         height_shift = projection_height * self.SPRITE_HEIGHT_SHIFT

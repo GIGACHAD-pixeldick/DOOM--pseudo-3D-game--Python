@@ -88,7 +88,7 @@ class RayCasting:
             else:
                 depth, texture = depth_horizontals, texture_horizontals
                 x_horizontals %= 1
-                offset = (1 - x_horizontals) if sin_a > 0 else x_horizontalsf
+                offset = (1 - x_horizontals) if sin_a > 0 else x_horizontals
 
             #remove fishbowl effect
             depth *= math.cos(self.game.player.angle - ray_angle)
